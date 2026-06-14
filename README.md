@@ -93,8 +93,7 @@ FinCompliance-Agent/
 │   └── data/
 ├── reports/
 ├── tests/
-├── archive/          # 本地旧版本归档，默认不提交
-└── local_runtime/    # 本地运行数据，默认不提交
+
 ```
 
 ## 演示流程

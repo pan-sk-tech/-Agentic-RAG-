@@ -1,0 +1,40 @@
+{
+  "claim_id": "RC-2026-0005",
+  "employee_name": "钱七",
+  "employee_level": "staff",
+  "department": "产品部",
+  "company_name": "星河智能科技有限公司",
+  "trip_city": "北京",
+  "trip_start": "2026-06-11",
+  "trip_end": "2026-06-12",
+  "approval_chain": ["employee_submit", "department_manager"],
+  "items": [
+    {
+      "item_id": "ITEM-001",
+      "item_type": "hotel",
+      "amount": 500,
+      "currency": "CNY",
+      "city": "北京",
+      "date": "2026-06-11",
+      "nights": 1,
+      "invoice_type": "住宿发票",
+      "buyer_name": "星河智能科技有限公司",
+      "seller_name": "北京某酒店",
+      "description": "北京住宿"
+    },
+    {
+      "item_id": "ITEM-002",
+      "item_type": "hotel",
+      "amount": 500,
+      "currency": "CNY",
+      "city": "北京",
+      "date": "2026-06-11",
+      "nights": 1,
+      "invoice_type": "住宿发票",
+      "buyer_name": "星河智能科技有限公司",
+      "seller_name": "北京某酒店",
+      "description": "北京住宿重复提交"
+    }
+  ]
+}
+

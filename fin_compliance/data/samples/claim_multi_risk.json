@@ -1,0 +1,38 @@
+{
+  "claim_id": "RC-2026-0004",
+  "employee_name": "赵六",
+  "employee_level": "staff",
+  "department": "渠道部",
+  "company_name": "星河智能科技有限公司",
+  "trip_city": "深圳",
+  "trip_start": "2026-06-08",
+  "trip_end": "2026-06-09",
+  "approval_chain": ["employee_submit"],
+  "items": [
+    {
+      "item_id": "ITEM-001",
+      "item_type": "meal",
+      "amount": 180,
+      "currency": "CNY",
+      "city": "深圳",
+      "date": "2026-06-08",
+      "invoice_type": "餐饮发票",
+      "buyer_name": "星河智能科技有限公司",
+      "seller_name": "深圳餐饮公司",
+      "description": "深圳出差餐饮"
+    },
+    {
+      "item_id": "ITEM-002",
+      "item_type": "transport",
+      "amount": 1280,
+      "currency": "CNY",
+      "city": "深圳",
+      "date": "2026-06-08",
+      "invoice_type": "高铁商务座",
+      "transport_class": "高铁商务座",
+      "buyer_name": "星河智能科技有限公司",
+      "description": "深圳高铁商务座"
+    }
+  ]
+}
+

@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Local secrets
+.env
+*.local
+
+# Streamlit runtime
+.streamlit/secrets.toml
+
+# Local runtime data
+local_runtime/
+archive/
+db/
+fin_compliance/ui_uploads/
+fin_compliance/data_flywheel/*.jsonl
+fin_compliance/post_training/*.jsonl
+
+# Generated reports
+reports/*.md
+reports/*.json
+reports/eval/
+!reports/examples/
+!reports/examples/**
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

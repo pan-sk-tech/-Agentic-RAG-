@@ -1,0 +1,23 @@
+{
+  "claim_id": "RC-2026-0006",
+  "employee_name": "孙八",
+  "employee_level": "staff",
+  "department": "运营部",
+  "company_name": "星河智能科技有限公司",
+  "trip_city": "上海",
+  "trip_start": "2026-06-20",
+  "trip_end": "2026-06-21",
+  "approval_chain": ["employee_submit"],
+  "items": [
+    {
+      "item_id": "ITEM-001",
+      "item_type": "hotel",
+      "amount": 520,
+      "currency": "CNY",
+      "city": "上海",
+      "nights": 1,
+      "invoice_type": "住宿发票",
+      "description": "缺少发票日期和抬头"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "claim_id": "RC-2026-0003",
+  "employee_name": "王五",
+  "employee_level": "staff",
+  "department": "市场部",
+  "company_name": "星河智能科技有限公司",
+  "trip_city": "广州",
+  "trip_start": "2026-06-10",
+  "trip_end": "2026-06-12",
+  "approval_chain": ["employee_submit", "department_manager"],
+  "items": [
+    {
+      "item_id": "ITEM-001",
+      "item_type": "hotel",
+      "amount": 580,
+      "currency": "CNY",
+      "city": "广州",
+      "date": "2026-06-15",
+      "nights": 1,
+      "invoice_type": "住宿发票",
+      "buyer_name": "星河科技",
+      "description": "广州出差住宿 1 晚"
+    }
+  ]
+}

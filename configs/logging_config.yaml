@@ -1,0 +1,5 @@
+logging:
+  level: INFO
+  trajectory_log: fin_compliance/data_flywheel/audit_logs.jsonl
+  feedback_log: fin_compliance/data_flywheel/feedback.jsonl
+  hard_case_log: fin_compliance/data_flywheel/hard_cases.jsonl

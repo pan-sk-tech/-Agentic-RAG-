@@ -1,0 +1,2 @@
+claim_id,employee_name,employee_level,department,company_name,trip_city,trip_start,trip_end,approval_chain,approval_files,attachments,item_id,item_type,amount,currency,city,date,nights,invoice_type,buyer_name,seller_name,transport_class,description
+RC-2026-EXCEL-001,张三,staff,销售部,星河智能科技有限公司,北京,2026-06-01,2026-06-03,employee_submit,fin_compliance/data/samples/approval_flow.txt,fin_compliance/data/samples/invoice_hotel_680.txt,ITEM-001,hotel,680,CNY,北京,2026-06-02,1,住宿发票,星河智能科技有限公司,北京某酒店,,北京出差住宿 1 晚

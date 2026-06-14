@@ -1,0 +1,327 @@
+{
+  "claim_id": "RC-2026-EXCEL-001",
+  "conclusion": "不合规",
+  "risk_level": "medium",
+  "findings": [
+    {
+      "rule_id": "RULE-HOTEL-FEE",
+      "passed": false,
+      "risk_type": "hotel_fee_over_limit",
+      "risk_level": "medium",
+      "reason": "报销单中住宿费为 680 元/晚，但公司差旅制度规定普通员工在北京住宿标准不得超过 600 元/晚。",
+      "expected": "<= 600 CNY/night",
+      "actual": "680 CNY/night",
+      "evidence_clause_ids": [
+        "TRAVEL-3.2"
+      ],
+      "suggestion": "退回修改或要求补充特殊审批说明。"
+    },
+    {
+      "rule_id": "RULE-INVOICE-DATE",
+      "passed": true,
+      "risk_type": "invoice_date_out_of_trip",
+      "risk_level": "low",
+      "reason": "ITEM-001 发票日期 2026-06-02，出差期间为 2026-06-01 至 2026-06-03。",
+      "expected": "2026-06-01 至 2026-06-03",
+      "actual": "2026-06-02",
+      "evidence_clause_ids": [
+        "TRAVEL-3.3"
+      ],
+      "suggestion": "通过发票日期校验。"
+    },
+    {
+      "rule_id": "RULE-INVOICE-TITLE",
+      "passed": true,
+      "risk_type": "invoice_title_mismatch",
+      "risk_level": "low",
+      "reason": "ITEM-001 发票购买方为 星河智能科技有限公司，公司名称为 星河智能科技有限公司。",
+      "expected": "星河智能科技有限公司",
+      "actual": "星河智能科技有限公司",
+      "evidence_clause_ids": [
+        "INVOICE-2.1"
+      ],
+      "suggestion": "通过发票抬头校验。"
+    },
+    {
+      "rule_id": "RULE-APPROVAL-CHAIN",
+      "passed": true,
+      "risk_type": "approval_chain_missing",
+      "risk_level": "low",
+      "reason": "报销总金额 680 元，当前审批链：employee_submit, department_manager。",
+      "expected": "department_manager for >1000 CNY; finance_director for >5000 CNY",
+      "actual": "employee_submit, department_manager",
+      "evidence_clause_ids": [
+        "APPROVAL-1.1"
+      ],
+      "suggestion": "通过审批链校验。"
+    }
+  ],
+  "evidence": [
+    {
+      "clause_id": "TRAVEL-3.2",
+      "title": "第 3.2 条 住宿标准",
+      "text": "普通员工在北京、上海、广州、深圳等一线城市出差，住宿费标准不得超过 600 元/晚；经理级员工不得超过 800 元/晚。二线城市普通员工住宿费不得超过 450 元/晚。超出标准时，应退回修改或补充特殊审批说明。",
+      "score": 104.1671,
+      "metadata": {
+        "doc_type": "reimbursement_policy",
+        "risk_type": "hotel_fee_over_limit",
+        "effective_date": "2025-01-01",
+        "source_page": 4,
+        "source_file": "差旅报销制度.pdf",
+        "tags": [
+          "差旅",
+          "报销",
+          "住宿",
+          "北京",
+          "一线城市",
+          "金额标准"
+        ],
+        "matched_terms": [
+          "hotel",
+          "reimbursement",
+          "一",
+          "一线城市",
+          "京",
+          "住",
+          "住宿",
+          "准",
+          "出",
+          "北",
+          "北京",
+          "城",
+          "审",
+          "宿",
+          "差",
+          "市",
+          "批",
+          "报",
+          "晚",
+          "条"
+        ]
+      }
+    },
+    {
+      "clause_id": "INVOICE-2.1",
+      "title": "发票抬头要求",
+      "text": "员工提交的增值税普通发票或专用发票，购买方名称必须与公司法定名称一致。发票抬头不一致时，不得直接报销，应退回修改或补充财务特批。",
+      "score": 47.9183,
+      "metadata": {
+        "doc_type": "invoice_policy",
+        "risk_type": "invoice_title_mismatch",
+        "effective_date": "2025-01-01",
+        "source_page": 5,
+        "source_file": "unknown",
+        "tags": [
+          "发票",
+          "抬头",
+          "购买方",
+          "公司名称"
+        ],
+        "matched_terms": [
+          "1",
+          "一",
+          "买",
+          "公",
+          "务",
+          "发",
+          "发票",
+          "发票抬头",
+          "司",
+          "头",
+          "批",
+          "报",
+          "抬",
+          "方",
+          "用",
+          "票",
+          "财",
+          "购",
+          "购买方",
+          "销"
+        ]
+      }
+    },
+    {
+      "clause_id": "TRAVEL-3.3",
+      "title": "发票日期要求",
+      "text": "住宿、交通、餐饮等差旅发票日期应落在已批准的出差起止日期范围内。若发票日期晚于出差结束日期或早于出差开始日期，应标记为日期异常并要求员工补充说明。",
+      "score": 44.7572,
+      "metadata": {
+        "doc_type": "reimbursement_policy",
+        "risk_type": "invoice_date_out_of_trip",
+        "effective_date": "2025-01-01",
+        "source_page": 13,
+        "source_file": "unknown",
+        "tags": [
+          "差旅",
+          "发票",
+          "日期",
+          "异常"
+        ],
+        "matched_terms": [
+          "reimbursement",
+          "住",
+          "住宿",
+          "准",
+          "出",
+          "发",
+          "发票",
+          "宿",
+          "差",
+          "批",
+          "晚",
+          "标",
+          "票"
+        ]
+      }
+    },
+    {
+      "clause_id": "APPROVAL-1.1",
+      "title": "报销审批权限",
+      "text": "单笔报销总金额超过 1000 元时，应包含直属部门经理审批；超过 5000 元时，还应包含财务负责人审批。审批链缺失时，系统应标记为中高风险并要求补全审批。",
+      "score": 36.8944,
+      "metadata": {
+        "doc_type": "approval_policy",
+        "risk_type": "approval_chain_missing",
+        "effective_date": "2025-01-01",
+        "source_page": 3,
+        "source_file": "unknown",
+        "tags": [
+          "审批",
+          "报销",
+          "权限",
+          "金额"
+        ],
+        "matched_terms": [
+          "1",
+          "务",
+          "审",
+          "审批",
+          "批",
+          "报",
+          "标",
+          "理",
+          "经",
+          "财",
+          "部",
+          "链",
+          "销",
+          "限",
+          "险",
+          "风"
+        ]
+      }
+    },
+    {
+      "clause_id": "REIM-6.1",
+      "title": "重复报销控制",
+      "text": "同一员工、同一日期、同一发票类型、同一金额的费用不得重复报销。系统发现疑似重复项目时，应标记为重复报销风险并进入人工复核。",
+      "score": 24.2216,
+      "metadata": {
+        "doc_type": "reimbursement_policy",
+        "risk_type": "duplicate_reimbursement",
+        "effective_date": "2025-01-01",
+        "source_page": 22,
+        "source_file": "unknown",
+        "tags": [
+          "报销",
+          "重复",
+          "发票",
+          "人工复核"
+        ],
+        "matched_terms": [
+          "1",
+          "reimbursement",
+          "一",
+          "制",
+          "发",
+          "发票",
+          "报",
+          "标",
+          "核",
+          "用",
+          "票",
+          "费",
+          "销",
+          "险",
+          "风"
+        ]
+      }
+    },
+    {
+      "clause_id": "TRAVEL-4.1",
+      "title": "交通工具标准",
+      "text": "普通员工城际交通原则上选择高铁二等座或经济舱。商务舱、头等舱或高铁商务座需提前获得部门负责人和财务负责人审批，否则应判定为交通标准异常。",
+      "score": 23.659,
+      "metadata": {
+        "doc_type": "reimbursement_policy",
+        "risk_type": "transport_policy_violation",
+        "effective_date": "2025-01-01",
+        "source_page": 16,
+        "source_file": "unknown",
+        "tags": [
+          "差旅",
+          "交通",
+          "高铁",
+          "机票",
+          "审批"
+        ],
+        "matched_terms": [
+          "1",
+          "reimbursement",
+          "准",
+          "务",
+          "城",
+          "头",
+          "审",
+          "审批",
+          "差",
+          "批",
+          "标",
+          "标准",
+          "票",
+          "经",
+          "财",
+          "部"
+        ]
+      }
+    },
+    {
+      "clause_id": "TRAVEL-5.1",
+      "title": "餐饮报销标准",
+      "text": "普通员工差旅期间餐饮补贴或餐饮发票报销标准不得超过 120 元/天，经理级员工不得超过 180 元/天。超过标准时应退回修改或补充审批说明。",
+      "score": 20.2357,
+      "metadata": {
+        "doc_type": "reimbursement_policy",
+        "risk_type": "meal_fee_over_limit",
+        "effective_date": "2025-01-01",
+        "source_page": 18,
+        "source_file": "unknown",
+        "tags": [
+          "差旅",
+          "餐饮",
+          "报销",
+          "金额标准"
+        ],
+        "matched_terms": [
+          "1",
+          "reimbursement",
+          "准",
+          "发",
+          "审",
+          "差",
+          "批",
+          "报",
+          "标",
+          "标准",
+          "理",
+          "票",
+          "经",
+          "销"
+        ]
+      }
+    }
+  ],
+  "missing_info": [],
+  "markdown": "# 财务合规审核报告 - RC-2026-EXCEL-001\n\n- 生成时间：2026-06-14 11:02:03\n- 员工：张三\n- 部门：销售部\n- 出差城市：北京\n- 出差期间：2026-06-01 至 2026-06-03\n- 审核结论：**不合规**\n- 风险等级：**中风险**\n\n## 审核摘要\n\n### 住宿费超标\n- 审核结论：**不合规**\n- 风险类型：住宿费超标\n- 具体原因：报销单中住宿费为 680 元/晚，但公司差旅制度规定普通员工在北京住宿标准不得超过 600 元/晚。\n- 超标/差异：680 - 600 = 80 元/晚\n- 制度依据：《差旅报销制度.pdf》第 3.2 条 住宿标准：普通员工在北京、上海、广州、深圳等一线城市出差，住宿费标准不得超过 600 元/晚；经理级员工不得超过 800 元/晚。二线城市普通员工住宿费不得超过 450 元/晚。超出标准时，应退回修改或补充特殊审批说明。\n- 风险等级：中风险\n- 处理建议：退回修改或要求补充特殊审批说明。\n- 证据来源：制度文件：差旅报销制度.pdf；页码：第 4 页；条款：TRAVEL-3.2 第 3.2 条 住宿标准\n\n## Agent 执行计划\n\n1. 识别任务意图，判断是差旅报销、通用费用、合同付款还是需要补充材料。\n2. 调用 OCR/文档解析工具抽取附件中的发票字段。\n3. 解析报销单中的金额、日期、城市、员工级别、发票类型和审批链。\n4. 根据城市和员工级别匹配住宿费标准。\n5. 检索公司差旅报销制度、发票制度和审批权限制度。\n6. 调用规则引擎校验住宿金额、发票日期、发票抬头和审批链。\n7. 为每个风险项绑定制度条款证据。\n8. 生成包含结论、风险等级、证据链和整改建议的审核报告。\n\n## 工具调用链路\n\n- `ocr_parser`：解析发票图片、扫描件或 OCR 文本附件。\n  - 状态：planned\n- `policy_retriever`：检索企业财务制度、发票制度、审批制度和合同制度。\n  - 状态：planned\n- `rule_engine`：执行金额、日期、发票抬头、审批链、重复报销和交通标准校验。\n  - 状态：planned\n- `evidence_verifier`：检查每个风险结论是否绑定了真实检索证据。\n  - 状态：planned\n- `report_writer`：生成结构化 Markdown 审核报告。\n  - 状态：planned\n\n## 风险项与规则判断\n\n### RULE-HOTEL-FEE - 未通过\n- 风险类型：hotel_fee_over_limit\n- 风险等级：medium\n- 判断原因：报销单中住宿费为 680 元/晚，但公司差旅制度规定普通员工在北京住宿标准不得超过 600 元/晚。\n- 期望值：<= 600 CNY/night\n- 实际值：680 CNY/night\n- 证据条款：TRAVEL-3.2\n- 处理建议：退回修改或要求补充特殊审批说明。\n\n### RULE-INVOICE-DATE - 通过\n- 风险类型：invoice_date_out_of_trip\n- 风险等级：low\n- 判断原因：ITEM-001 发票日期 2026-06-02，出差期间为 2026-06-01 至 2026-06-03。\n- 期望值：2026-06-01 至 2026-06-03\n- 实际值：2026-06-02\n- 证据条款：TRAVEL-3.3\n- 处理建议：通过发票日期校验。\n\n### RULE-INVOICE-TITLE - 通过\n- 风险类型：invoice_title_mismatch\n- 风险等级：low\n- 判断原因：ITEM-001 发票购买方为 星河智能科技有限公司，公司名称为 星河智能科技有限公司。\n- 期望值：星河智能科技有限公司\n- 实际值：星河智能科技有限公司\n- 证据条款：INVOICE-2.1\n- 处理建议：通过发票抬头校验。\n\n### RULE-APPROVAL-CHAIN - 通过\n- 风险类型：approval_chain_missing\n- 风险等级：low\n- 判断原因：报销总金额 680 元，当前审批链：employee_submit, department_manager。\n- 期望值：department_manager for >1000 CNY; finance_director for >5000 CNY\n- 实际值：employee_submit, department_manager\n- 证据条款：APPROVAL-1.1\n- 处理建议：通过审批链校验。\n\n## 检索证据链\n\n### TRAVEL-3.2 第 3.2 条 住宿标准\n- 匹配分数：104.1671\n- 文档类型：reimbursement_policy\n- 风险类型：hotel_fee_over_limit\n- 来源页：4\n- 来源文件：差旅报销制度.pdf\n- 命中词：hotel, reimbursement, 一, 一线城市, 京, 住, 住宿, 准, 出, 北, 北京, 城, 审, 宿, 差, 市, 批, 报, 晚, 条\n> 普通员工在北京、上海、广州、深圳等一线城市出差，住宿费标准不得超过 600 元/晚；经理级员工不得超过 800 元/晚。二线城市普通员工住宿费不得超过 450 元/晚。超出标准时，应退回修改或补充特殊审批说明。\n\n### INVOICE-2.1 发票抬头要求\n- 匹配分数：47.9183\n- 文档类型：invoice_policy\n- 风险类型：invoice_title_mismatch\n- 来源页：5\n- 来源文件：unknown\n- 命中词：1, 一, 买, 公, 务, 发, 发票, 发票抬头, 司, 头, 批, 报, 抬, 方, 用, 票, 财, 购, 购买方, 销\n> 员工提交的增值税普通发票或专用发票，购买方名称必须与公司法定名称一致。发票抬头不一致时，不得直接报销，应退回修改或补充财务特批。\n\n### TRAVEL-3.3 发票日期要求\n- 匹配分数：44.7572\n- 文档类型：reimbursement_policy\n- 风险类型：invoice_date_out_of_trip\n- 来源页：13\n- 来源文件：unknown\n- 命中词：reimbursement, 住, 住宿, 准, 出, 发, 发票, 宿, 差, 批, 晚, 标, 票\n> 住宿、交通、餐饮等差旅发票日期应落在已批准的出差起止日期范围内。若发票日期晚于出差结束日期或早于出差开始日期，应标记为日期异常并要求员工补充说明。\n\n### APPROVAL-1.1 报销审批权限\n- 匹配分数：36.8944\n- 文档类型：approval_policy\n- 风险类型：approval_chain_missing\n- 来源页：3\n- 来源文件：unknown\n- 命中词：1, 务, 审, 审批, 批, 报, 标, 理, 经, 财, 部, 链, 销, 限, 险, 风\n> 单笔报销总金额超过 1000 元时，应包含直属部门经理审批；超过 5000 元时，还应包含财务负责人审批。审批链缺失时，系统应标记为中高风险并要求补全审批。\n\n### REIM-6.1 重复报销控制\n- 匹配分数：24.2216\n- 文档类型：reimbursement_policy\n- 风险类型：duplicate_reimbursement\n- 来源页：22\n- 来源文件：unknown\n- 命中词：1, reimbursement, 一, 制, 发, 发票, 报, 标, 核, 用, 票, 费, 销, 险, 风\n> 同一员工、同一日期、同一发票类型、同一金额的费用不得重复报销。系统发现疑似重复项目时，应标记为重复报销风险并进入人工复核。\n\n### TRAVEL-4.1 交通工具标准\n- 匹配分数：23.659\n- 文档类型：reimbursement_policy\n- 风险类型：transport_policy_violation\n- 来源页：16\n- 来源文件：unknown\n- 命中词：1, reimbursement, 准, 务, 城, 头, 审, 审批, 差, 批, 标, 标准, 票, 经, 财, 部\n> 普通员工城际交通原则上选择高铁二等座或经济舱。商务舱、头等舱或高铁商务座需提前获得部门负责人和财务负责人审批，否则应判定为交通标准异常。\n\n### TRAVEL-5.1 餐饮报销标准\n- 匹配分数：20.2357\n- 文档类型：reimbursement_policy\n- 风险类型：meal_fee_over_limit\n- 来源页：18\n- 来源文件：unknown\n- 命中词：1, reimbursement, 准, 发, 审, 差, 批, 报, 标, 标准, 理, 票, 经, 销\n> 普通员工差旅期间餐饮补贴或餐饮发票报销标准不得超过 120 元/天，经理级员工不得超过 180 元/天。超过标准时应退回修改或补充审批说明。\n"
+}

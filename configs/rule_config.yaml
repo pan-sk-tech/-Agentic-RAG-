@@ -1,0 +1,21 @@
+travel:
+  first_tier_cities:
+    - 北京
+    - 上海
+    - 广州
+    - 深圳
+  staff_hotel_limit_cny_per_night: 600
+  manager_hotel_limit_cny_per_night: 800
+  second_tier_staff_hotel_limit_cny_per_night: 450
+
+invoice:
+  require_date_inside_trip: true
+  require_buyer_matches_company: true
+
+approval:
+  department_manager_threshold_cny: 1000
+  finance_director_threshold_cny: 5000
+
+contract:
+  high_risk_prepayment_ratio: 0.3
+  require_acceptance_clause: true

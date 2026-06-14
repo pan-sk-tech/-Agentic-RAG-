@@ -1,0 +1,13 @@
+eval:
+  test_cases: fin_compliance/eval/test_cases.jsonl
+  report_dir: reports/eval
+  metrics:
+    - conclusion_accuracy
+    - rule_accuracy
+    - risk_type_recall
+    - risk_type_precision
+    - evidence_recall
+    - citation_accuracy
+    - faithfulness
+    - action_success_rate
+    - hallucination_rate

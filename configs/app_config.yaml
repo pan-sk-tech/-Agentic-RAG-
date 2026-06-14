@@ -1,0 +1,15 @@
+app:
+  name: FinCompliance-Agent
+  title: 企业财务合规审核工作台
+  default_user_id: streamlit_user
+
+paths:
+  policy_store: fin_compliance/data/policies/travel_reimbursement_policy.jsonl
+  sample_dir: fin_compliance/data/samples
+  upload_dir: fin_compliance/ui_uploads
+  report_dir: reports
+  audit_log: fin_compliance/data_flywheel/audit_logs.jsonl
+
+server:
+  streamlit_port: 8501
+  api_port: 8010

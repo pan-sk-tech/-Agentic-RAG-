@@ -1,0 +1,20 @@
+retrieval:
+  top_k: 8
+  strategy: hybrid_bm25_metadata_rerank
+  enable_query_rewrite: true
+  enable_business_rerank: true
+
+metadata:
+  fields:
+    - doc_type
+    - risk_type
+    - effective_date
+    - source_page
+    - source_file
+    - tags
+
+rerank_boost:
+  hotel_fee_over_limit: 2.0
+  invoice_policy: 1.5
+  approval_policy: 1.5
+  contract_payment_risk: 1.5

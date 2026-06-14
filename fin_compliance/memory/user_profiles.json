@@ -1,0 +1,11 @@
+{
+  "default_user": {
+    "user_id": "default_user",
+    "role": "finance_reviewer",
+    "department": "finance",
+    "preferences": {
+      "policy_version": "latest",
+      "report_language": "zh-CN"
+    }
+  }
+}

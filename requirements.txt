@@ -1,0 +1,11 @@
+langgraph
+pydantic
+typing-extensions
+fastapi
+uvicorn
+openpyxl
+pypdf
+Pillow
+pytesseract
+streamlit
+pytest
